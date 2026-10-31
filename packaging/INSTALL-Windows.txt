@@ -1,0 +1,10 @@
+Qpasa Reverb — установка на Windows
+===================================
+
+1. Скопируй папку "Qpasa Reverb.vst3" в:
+   C:\Program Files\Common Files\VST3\
+2. Открой свою DAW (FL Studio, Ableton, Reaper, Cubase...) и сделай
+   пересканирование плагинов (Plugin rescan).
+3. Плагин появится как "Qpasa Reverb" (производитель "Qpasa Audio").
+
+Совет: начни с пресета "Default Hall" и крути ручку MIX.
