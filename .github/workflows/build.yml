@@ -56,6 +56,19 @@ jobs:
           cp packaging/INSTALL-macOS.txt dist/
           cd dist && ditto -c -k --sequesterRsrc . ../QpasaReverb-macOS.zip
 
+      - name: Build installer (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          VERSION=$(grep -m1 -oE 'VERSION [0-9.]+' CMakeLists.txt | cut -d' ' -f2)
+          packaging/macos/build-pkg.sh dist "$VERSION" "Qpasa Reverb Installer.pkg"
+
+      - name: Upload installer (macOS)
+        if: runner.os == 'macOS'
+        uses: actions/upload-artifact@v4
+        with:
+          name: QpasaReverb-macOS-Installer
+          path: Qpasa Reverb Installer.pkg
+
       - name: Package (Windows)
         if: runner.os == 'Windows'
         run: |
@@ -82,4 +95,6 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          files: out/**/*.zip
+          files: |
+            out/**/*.zip
+            out/**/*.pkg

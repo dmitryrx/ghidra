@@ -1,17 +1,17 @@
 Qpasa Reverb — установка на macOS
 =================================
 
+Проще всего: скачай "Qpasa Reverb Installer.pkg" и запусти его.
+
+Ручная установка из этого архива:
+
 1. Скопируй файлы:
    "Qpasa Reverb.vst3"      ->  /Library/Audio/Plug-Ins/VST3/
    "Qpasa Reverb.component" ->  /Library/Audio/Plug-Ins/Components/
-   (или в те же папки внутри ~/Library в своей домашней папке)
 
 2. Плагин не подписан у Apple, поэтому macOS может его заблокировать.
    Открой Терминал и выполни одну команду:
 
    sudo xattr -dr com.apple.quarantine "/Library/Audio/Plug-Ins/VST3/Qpasa Reverb.vst3" "/Library/Audio/Plug-Ins/Components/Qpasa Reverb.component"
 
-3. Перезапусти DAW (Logic, Ableton, FL Studio...) и найди "Qpasa Reverb"
-   у производителя "Qpasa Audio". Logic использует версию AU (.component).
-
-Совет: начни с пресета "Default Hall" и крути ручку MIX.
+3. Перезапусти DAW и найди "Qpasa Reverb" у производителя "Qpasa Audio".
