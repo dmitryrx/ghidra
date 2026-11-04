@@ -59,7 +59,7 @@ jobs:
       - name: Build installer (macOS)
         if: runner.os == 'macOS'
         run: |
-          VERSION=$(grep -m1 -oE 'VERSION [0-9.]+' CMakeLists.txt | cut -d' ' -f2)
+          VERSION=$(sed -nE 's/^project\(QpasaReverb VERSION ([0-9.]+).*/\1/p' CMakeLists.txt)
           packaging/macos/build-pkg.sh dist "$VERSION" "Qpasa Reverb Installer.pkg"
 
       - name: Upload installer (macOS)
